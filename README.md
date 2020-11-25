@@ -41,6 +41,14 @@ Android application with two screens; one screen with a Team list, and a second 
 | :---: | :---: |
 | <img src="./docs/Screenshot_main.png" width="80%"/> | <img src="./docs/Screenshot_detail.png" width="80%"/> |
 
+| Sort actions menu | Sorted by most wins |
+| :---: | :---: |
+| <img src="./docs/Screenshot_menu.png" width="80%"/> | <img src="./docs/Screenshot_sorted.png" width="80%"/> |
+
+| Tablet |
+| :---: |
+| <img src="./docs/Screenshot_tablet.png" width="80%"/> |
+
 ## Versioning and dependencies
 
 **Target SDK Version:** 30
