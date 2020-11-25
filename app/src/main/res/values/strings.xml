@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Team Viewer</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="action_sort">Sort</string>
+    <string name="sort_by_wins">Most wins</string>
+    <string name="sort_by_losses">Most losses</string>
+    <string name="sort_by_az">Sort A-Z</string>
+    <string name="label_wins">Wins</string>
+    <string name="label_losses">Losses</string>
+</resources>

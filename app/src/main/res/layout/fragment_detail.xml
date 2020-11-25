@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="team" type="com.aguedagg.nbateamviewer.data.Team" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_vertical_padding"
+        android:background="@drawable/header_background"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_spacing"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/header_text_color"
+            android:textSize="@dimen/header_text_size"
+            android:text="@{team.fullName}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/team_wins"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/team_wins"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/detail_margin_horizontal"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/team_detail_text_color"
+            android:textSize="@dimen/detail_text_size"
+            android:text="@{team.wins}"
+            app:layout_constraintTop_toTopOf="@+id/team_losses"
+            app:layout_constraintEnd_toStartOf="@+id/divider" />
+
+        <TextView
+            android:id="@+id/wins_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_wins"
+            android:textColor="@color/team_detail_text_color"
+            android:textSize="@dimen/detail_label_text_size"
+            app:layout_constraintTop_toBottomOf="@+id/team_wins"
+            app:layout_constraintStart_toStartOf="@+id/team_wins"
+            app:layout_constraintEnd_toEndOf="@+id/team_wins" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/activity_vertical_padding"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="@+id/team_wins"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/wins_label"/>
+
+        <TextView
+            android:id="@+id/team_losses"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/detail_margin_horizontal"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/team_detail_text_color"
+            android:textSize="@dimen/detail_text_size"
+            android:text="@{team.losses}"
+            app:layout_constraintTop_toTopOf="@+id/team_wins"
+            app:layout_constraintStart_toEndOf="@+id/divider" />
+
+        <TextView
+            android:id="@+id/losses_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@string/label_losses"
+            android:textColor="@color/team_detail_text_color"
+            android:textSize="@dimen/detail_label_text_size"
+            app:layout_constraintTop_toBottomOf="@+id/team_losses"
+            app:layout_constraintStart_toStartOf="@+id/team_losses"
+            app:layout_constraintEnd_toEndOf="@+id/team_losses" />
+
+        <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/team_detail_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/recycler_margin_top"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/team_losses"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
